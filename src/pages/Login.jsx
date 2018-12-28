@@ -13,6 +13,7 @@ class Login extends Component {
   render() {
     return (
       <main id="login">
+        Введите любой логин и <br /> любой пароль, чтобы войти
         <form onSubmit={this.onSubmit}>
           <div className="mdc-textfield">
             <input
