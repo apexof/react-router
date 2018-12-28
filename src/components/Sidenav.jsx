@@ -14,7 +14,7 @@ function Sidenav({ topics }) {
           >
             <img
               alt="alt"
-              src={`/img/topics/${topic.id}.svg`}
+              src={`${process.env.PUBLIC_URL}/img/topics/${topic.id}.svg`}
               className="mdc-list-item__start-detail"
             />
             {topic.title}

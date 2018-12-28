@@ -19,15 +19,11 @@ class App extends Component {
   };
 
   login = user => {
-    this.setState({ user }, () =>
-      this.props.history.push("%PUBLIC_URL%/books")
-    );
+    this.setState({ user }, () => this.props.history.push("/books"));
   };
 
   logout = () => {
-    this.setState({ user: null }, () =>
-      this.props.history.push("%PUBLIC_URL%/")
-    );
+    this.setState({ user: null }, () => this.props.history.push("/"));
   };
 
   render() {
@@ -37,31 +33,28 @@ class App extends Component {
         <Toolbar user={this.state.user} />
 
         <Content>
-          <Route
-            path="%PUBLIC_URL%/books"
-            render={() => <Sidenav topics={topics} />}
-          />
+          <Route path="/books" render={() => <Sidenav topics={topics} />} />
           <Switch>
-            <Route exact path="%PUBLIC_URL%/" component={Home} />
-            <Route path="%PUBLIC_URL%/about" component={About} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
             <Route
-              path="%PUBLIC_URL%/login"
+              path="/login"
               render={props => <Login onLogin={this.login} />}
             />
             <Route
-              path="%PUBLIC_URL%/logout"
+              path="/logout"
               render={props => <Logout onLogout={this.logout} />}
             />
             <PrivateRoute
               exact
-              path="%PUBLIC_URL%/books/:topic?"
+              path="/books/:topic?"
               user={this.state.user}
               component={Books}
               data={books}
             />
             } />
             <PrivateRoute
-              path="%PUBLIC_URL%/books/:topic/:book"
+              path="/books/:topic/:book"
               user={this.state.user}
               component={Book}
               data={books}

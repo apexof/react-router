@@ -11,7 +11,7 @@ import "material-components-web/dist/material-components-web.css";
 import "./index.css";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App books={books} topics={topics} />
   </BrowserRouter>,
   document.getElementById("root")

@@ -8,7 +8,7 @@ function Book({ match, data }) {
       <div className="mdc-card">
         <div className="mdc-card__horizontal-block">
           <img
-            src={`/img/books/${book.cover}`}
+            src={`${process.env.PUBLIC_URL}/img/books/${book.cover}`}
             className="mdc-card__media-item mdc-card__media-item--3x"
             alt={book.title}
           />
